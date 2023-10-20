@@ -24,3 +24,5 @@ jobs:
         run: docker image tag $IMAGE_NAME $DOCKERHUB_REPOSITORY:v1
       - name: Push image to dockerhub
         run: docker push $DOCKERHUB_REPOSITORY:$IMAGE_NAME
+      - name: Run docker image
+        run: docker run -d $DOCKERHUB_REPOSITORY:$IMAGE_NAME
