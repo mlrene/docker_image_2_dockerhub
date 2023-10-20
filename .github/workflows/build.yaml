@@ -25,4 +25,4 @@ jobs:
       - name: Push image to dockerhub
         run: docker push $DOCKERHUB_REPOSITORY:$IMAGE_NAME
       - name: Run docker image
-        run: docker run -d $DOCKERHUB_REPOSITORY:$IMAGE_NAME
+        run: docker run -d -p 8000:80 $DOCKERHUB_REPOSITORY:$IMAGE_NAME
